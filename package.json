@@ -1,0 +1,25 @@
+{
+  "name": "es-6",
+  "version": "1.0.0",
+  "description": "es6 - config",
+  "main": "index.js",
+  "scripts": {
+    "babel-mini": "babel --presets es2015,minify src/main.js -o build/main.bundle.js",
+    "babel-watch": "babel --presets es2015 src/ -w -d build",
+    "babel": "babel --presets es2015 src/ -d build",
+    "ugly": "uglifyjs-folder build -eo jsm",
+    "concat": "concat-cli -f build/*.js -o final/bundle.js",
+    "build": "npm run babel | npm run concat"
+  },
+  "author": "khazarr",
+  "license": "MIT",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-minify": "^0.2.0",
+    "concat": "^1.0.3",
+    "del-cli": "^1.1.0",
+    "uglifyjs-folder": "^1.5.0"
+  }
+}
